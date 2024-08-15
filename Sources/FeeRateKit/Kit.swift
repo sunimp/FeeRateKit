@@ -1,4 +1,4 @@
-import HsToolKit
+import WWToolKit
 
 public class Kit {
     private let mempoolSpaceProvider: MempoolSpaceProvider

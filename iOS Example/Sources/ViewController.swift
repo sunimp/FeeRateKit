@@ -8,9 +8,7 @@ class ViewController: UIViewController {
             ethEvmUrl: FeeProviderConfig.infuraUrl(projectId: "2a1306f1d12f4c109a4d4fb9be46b02e"),
             ethEvmAuth: "fc479a9290b64a84a15fa6544a130218",
             bscEvmUrl: FeeProviderConfig.defaultBscEvmUrl,
-            btcCoreRpcUrl: "https://btc.horizontalsystems.xyz/rpc",
-            btcCoreRpcUser: nil,
-            btcCoreRpcPassword: nil
+            mempoolSpaceUrl: "https://mempool.space"
     ))
 
     private let exampleBlockchains = ["BTC", "LTC", "BCH", "DASH", "ETH", "BSC"]
@@ -24,13 +22,20 @@ class ViewController: UIViewController {
                     let rate: Int
 
                     switch blockchain {
-                    case "BTC": rate = try await feeRateKit.bitcoin(blockCount: 10)
-                    case "LTC": rate = feeRateKit.litecoin
-                    case "BCH": rate = feeRateKit.bitcoinCash
-                    case "DASH": rate = feeRateKit.dash
-                    case "ETH": rate = try await feeRateKit.ethereum()
-                    case "BSC": rate = try await feeRateKit.binanceSmartChain()
-                    default: rate = 0
+                    case "BTC": 
+                        rate = try await feeRateKit.bitcoin().fastestFee
+                    case "LTC": 
+                        rate = feeRateKit.litecoin
+                    case "BCH": 
+                        rate = feeRateKit.bitcoinCash
+                    case "DASH": 
+                        rate = feeRateKit.dash
+                    case "ETH": 
+                        rate = try await feeRateKit.ethereum()
+                    case "BSC": 
+                        rate = try await feeRateKit.binanceSmartChain()
+                    default: 
+                        rate = 0
                     }
 
                     rates.append(rate)
