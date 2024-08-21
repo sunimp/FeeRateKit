@@ -1,6 +1,16 @@
+//
+//  Kit.swift
+//  FeeRateKit
+//
+//  Created by Sun on 2024/8/21.
+//
+
+import Foundation
+
 import WWToolKit
 
 public class Kit {
+    
     private let mempoolSpaceProvider: MempoolSpaceProvider
     private let ethProvider: EvmProvider
     private let bscProvider: EvmProvider

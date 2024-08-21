@@ -1,3 +1,12 @@
+//
+//  FeeProviderConfig.swift
+//  FeeRateKit
+//
+//  Created by Sun on 2024/8/21.
+//
+
+import Foundation
+
 public struct FeeProviderConfig {
     let ethEvmUrl: String
     let ethEvmAuth: String?
