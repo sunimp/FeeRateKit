@@ -10,6 +10,8 @@ import Foundation
 import Alamofire
 import WWToolKit
 
+// MARK: - EvmProvider
+
 class EvmProvider {
     private let networkManager: NetworkManager
     private let url: String
@@ -26,16 +28,22 @@ class EvmProvider {
             "id": "1",
             "jsonrpc": "2.0",
             "method": "eth_gasPrice",
-            "params": []
+            "params": [],
         ]
 
         var headers = HTTPHeaders()
 
-        if let auth = auth {
+        if let auth {
             headers.add(.authorization(username: "", password: auth))
         }
 
-        let json = try await networkManager.fetchJson(url: url, method: .post, parameters: parameters, encoding: JSONEncoding.default, headers: headers)
+        let json = try await networkManager.fetchJson(
+            url: url,
+            method: .post,
+            parameters: parameters,
+            encoding: JSONEncoding.default,
+            headers: headers
+        )
 
         guard let map = json as? [String: Any] else {
             throw ResponseError.invalidJson
@@ -59,6 +67,8 @@ class EvmProvider {
     }
 
 }
+
+// MARK: EvmProvider.ResponseError
 
 extension EvmProvider {
 

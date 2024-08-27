@@ -8,24 +8,25 @@
 import Foundation
 
 public struct FeeProviderConfig {
-    let ethEvmUrl: String
+    
+    let ethEvmURL: String
     let ethEvmAuth: String?
-    let bscEvmUrl: String
-    let mempoolSpaceUrl: String
+    let bscEvmURL: String
+    let mempoolSpaceURL: String
 
-    public init(ethEvmUrl: String, ethEvmAuth: String? = nil, bscEvmUrl: String, mempoolSpaceUrl: String) {
-        self.ethEvmUrl = ethEvmUrl
+    public init(ethEvmURL: String, ethEvmAuth: String? = nil, bscEvmURL: String, mempoolSpaceURL: String) {
+        self.ethEvmURL = ethEvmURL
         self.ethEvmAuth = ethEvmAuth
-        self.bscEvmUrl = bscEvmUrl
-        self.mempoolSpaceUrl = mempoolSpaceUrl
+        self.bscEvmURL = bscEvmURL
+        self.mempoolSpaceURL = mempoolSpaceURL
     }
 
-    public static var defaultBscEvmUrl: String {
+    public static var defaultBscEvmURL: String {
         "https://bsc-dataseed.binance.org/"
     }
 
-    public static func infuraUrl(projectId: String) -> String {
-        "https://mainnet.infura.io/v3/\(projectId)"
+    public static func infuraURL(projectID: String) -> String {
+        "https://mainnet.infura.io/v3/\(projectID)"
     }
 
 }

@@ -6,7 +6,7 @@ Real-time network transaction fee rates for `Bitcoin`, `Bitcoin Cash` and `Ether
 
 ```swift
 dependencies: [
-    .package(url: "https://github.com/sunimp/FeeRateKit.Swift.git", .upToNextMajor(from: "2.1.2"))
+    .package(url: "https://github.com/sunimp/FeeRateKit.Swift.git", .upToNextMajor(from: "2.1.3"))
 ]
 ```
 

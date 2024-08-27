@@ -9,6 +9,8 @@ import Foundation
 
 import WWToolKit
 
+// MARK: - Kit
+
 public class Kit {
     
     private let mempoolSpaceProvider: MempoolSpaceProvider
@@ -59,8 +61,12 @@ extension Kit {
         let networkManager = NetworkManager(logger: logger)
 
         let mempoolSpaceProvider = MempoolSpaceProvider(networkManager: networkManager, config: providerConfig)
-        let ethProvider = EvmProvider(networkManager: networkManager, url: providerConfig.ethEvmUrl, auth: providerConfig.ethEvmAuth)
-        let bscProvider = EvmProvider(networkManager: networkManager, url: providerConfig.bscEvmUrl)
+        let ethProvider = EvmProvider(
+            networkManager: networkManager,
+            url: providerConfig.ethEvmURL,
+            auth: providerConfig.ethEvmAuth
+        )
+        let bscProvider = EvmProvider(networkManager: networkManager, url: providerConfig.bscEvmURL)
 
         let kit = Kit(mempoolSpaceProvider: mempoolSpaceProvider, ethProvider: ethProvider, bscProvider: bscProvider)
 

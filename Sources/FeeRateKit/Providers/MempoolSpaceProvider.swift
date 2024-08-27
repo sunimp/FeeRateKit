@@ -8,27 +8,31 @@
 import Foundation
 
 import Alamofire
-import WWToolKit
 import ObjectMapper
+import WWToolKit
+
+// MARK: - MempoolSpaceProvider
 
 public class MempoolSpaceProvider {
     private let networkManager: NetworkManager
-    private let baseUrl: String
+    private let baseURL: String
 
     init(networkManager: NetworkManager, config: FeeProviderConfig) {
         self.networkManager = networkManager
-        baseUrl = config.mempoolSpaceUrl
+        baseURL = config.mempoolSpaceURL
     }
     
     func getFeeRate() async throws -> RecommendedFees {
-        return try await networkManager.fetch(
-            url: "\(baseUrl)/api/v1/fees/recommended",
+        try await networkManager.fetch(
+            url: "\(baseURL)/api/v1/fees/recommended",
             method: .get,
             parameters: [:]
         )
     }
 
 }
+
+// MARK: MempoolSpaceProvider.RecommendedFees
 
 extension MempoolSpaceProvider {
 
