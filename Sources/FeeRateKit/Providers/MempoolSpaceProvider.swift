@@ -15,16 +15,16 @@ import WWToolKit
 
 public class MempoolSpaceProvider {
     private let networkManager: NetworkManager
-    private let baseURL: String
+    private let baseUrl: String
 
     init(networkManager: NetworkManager, config: FeeProviderConfig) {
         self.networkManager = networkManager
-        baseURL = config.mempoolSpaceURL
+        baseUrl = config.mempoolSpaceUrl
     }
     
     func getFeeRate() async throws -> RecommendedFees {
         try await networkManager.fetch(
-            url: "\(baseURL)/api/v1/fees/recommended",
+            url: "\(baseUrl)/api/v1/fees/recommended",
             method: .get,
             parameters: [:]
         )

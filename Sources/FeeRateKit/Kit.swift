@@ -63,10 +63,10 @@ extension Kit {
         let mempoolSpaceProvider = MempoolSpaceProvider(networkManager: networkManager, config: providerConfig)
         let ethProvider = EvmProvider(
             networkManager: networkManager,
-            url: providerConfig.ethEvmURL,
+            url: providerConfig.ethEvmUrl,
             auth: providerConfig.ethEvmAuth
         )
-        let bscProvider = EvmProvider(networkManager: networkManager, url: providerConfig.bscEvmURL)
+        let bscProvider = EvmProvider(networkManager: networkManager, url: providerConfig.bscEvmUrl)
 
         let kit = Kit(mempoolSpaceProvider: mempoolSpaceProvider, ethProvider: ethProvider, bscProvider: bscProvider)
 
