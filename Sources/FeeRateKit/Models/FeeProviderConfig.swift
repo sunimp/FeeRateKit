@@ -1,32 +1,37 @@
 //
 //  FeeProviderConfig.swift
-//  FeeRateKit
 //
-//  Created by Sun on 2024/8/21.
+//  Created by Sun on 2019/11/6.
 //
 
 import Foundation
 
 public struct FeeProviderConfig {
-    
-    let ethEvmUrl: String
-    let ethEvmAuth: String?
-    let bscEvmUrl: String
-    let mempoolSpaceUrl: String
+    // MARK: Static Computed Properties
 
-    public init(ethEvmUrl: String, ethEvmAuth: String? = nil, bscEvmUrl: String, mempoolSpaceUrl: String) {
-        self.ethEvmUrl = ethEvmUrl
-        self.ethEvmAuth = ethEvmAuth
-        self.bscEvmUrl = bscEvmUrl
-        self.mempoolSpaceUrl = mempoolSpaceUrl
-    }
-
-    public static var defaultBscEvmUrl: String {
+    public static var defaultBscEvmURL: String {
         "https://bsc-dataseed.binance.org/"
     }
 
-    public static func infuraUrl(projectId: String) -> String {
-        "https://mainnet.infura.io/v3/\(projectId)"
+    // MARK: Properties
+
+    let ethEvmURL: String
+    let ethEvmAuth: String?
+    let bscEvmURL: String
+    let mempoolSpaceURL: String
+
+    // MARK: Lifecycle
+
+    public init(ethEvmURL: String, ethEvmAuth: String? = nil, bscEvmURL: String, mempoolSpaceURL: String) {
+        self.ethEvmURL = ethEvmURL
+        self.ethEvmAuth = ethEvmAuth
+        self.bscEvmURL = bscEvmURL
+        self.mempoolSpaceURL = mempoolSpaceURL
     }
 
+    // MARK: Static Functions
+
+    public static func infuraURL(projectID: String) -> String {
+        "https://mainnet.infura.io/v3/\(projectID)"
+    }
 }

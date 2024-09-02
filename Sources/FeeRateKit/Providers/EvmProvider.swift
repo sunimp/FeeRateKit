@@ -1,8 +1,7 @@
 //
 //  EvmProvider.swift
-//  FeeRateKit
 //
-//  Created by Sun on 2024/8/21.
+//  Created by Sun on 2019/5/28.
 //
 
 import Foundation
@@ -13,15 +12,21 @@ import WWToolKit
 // MARK: - EvmProvider
 
 class EvmProvider {
+    // MARK: Properties
+
     private let networkManager: NetworkManager
     private let url: String
     private let auth: String?
+
+    // MARK: Lifecycle
 
     init(networkManager: NetworkManager, url: String, auth: String? = nil) {
         self.networkManager = networkManager
         self.url = url
         self.auth = auth
     }
+
+    // MARK: Functions
 
     func getFeeRate() async throws -> Int {
         let parameters: [String: Any] = [
@@ -65,18 +70,14 @@ class EvmProvider {
 
         return fee
     }
-
 }
 
 // MARK: EvmProvider.ResponseError
 
 extension EvmProvider {
-
     enum ResponseError: Error {
         case invalidJson
         case noResult
         case wrongFeeFormat
     }
-
 }
-

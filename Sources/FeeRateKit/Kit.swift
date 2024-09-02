@@ -1,8 +1,7 @@
 //
 //  Kit.swift
-//  FeeRateKit
 //
-//  Created by Sun on 2024/8/21.
+//  Created by Sun on 2019/4/5.
 //
 
 import Foundation
@@ -12,21 +11,22 @@ import WWToolKit
 // MARK: - Kit
 
 public class Kit {
-    
+    // MARK: Properties
+
     private let mempoolSpaceProvider: MempoolSpaceProvider
     private let ethProvider: EvmProvider
     private let bscProvider: EvmProvider
+
+    // MARK: Lifecycle
 
     init(mempoolSpaceProvider: MempoolSpaceProvider, ethProvider: EvmProvider, bscProvider: EvmProvider) {
         self.mempoolSpaceProvider = mempoolSpaceProvider
         self.ethProvider = ethProvider
         self.bscProvider = bscProvider
     }
-
 }
 
 extension Kit {
-
     public func bitcoin() async throws -> MempoolSpaceProvider.RecommendedFees {
         try await mempoolSpaceProvider.getFeeRate()
     }
@@ -50,11 +50,9 @@ extension Kit {
     public func binanceSmartChain() async throws -> Int {
         try await bscProvider.getFeeRate()
     }
-
 }
 
 extension Kit {
-
     public static func instance(providerConfig: FeeProviderConfig, minLogLevel: Logger.Level = .error) -> Kit {
         let logger = Logger(minLogLevel: minLogLevel)
 
@@ -63,14 +61,11 @@ extension Kit {
         let mempoolSpaceProvider = MempoolSpaceProvider(networkManager: networkManager, config: providerConfig)
         let ethProvider = EvmProvider(
             networkManager: networkManager,
-            url: providerConfig.ethEvmUrl,
+            url: providerConfig.ethEvmURL,
             auth: providerConfig.ethEvmAuth
         )
-        let bscProvider = EvmProvider(networkManager: networkManager, url: providerConfig.bscEvmUrl)
+        let bscProvider = EvmProvider(networkManager: networkManager, url: providerConfig.bscEvmURL)
 
-        let kit = Kit(mempoolSpaceProvider: mempoolSpaceProvider, ethProvider: ethProvider, bscProvider: bscProvider)
-
-        return kit
+        return Kit(mempoolSpaceProvider: mempoolSpaceProvider, ethProvider: ethProvider, bscProvider: bscProvider)
     }
-
 }
