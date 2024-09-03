@@ -1,5 +1,5 @@
 //
-//  EvmProvider.swift
+//  EVMProvider.swift
 //
 //  Created by Sun on 2019/5/28.
 //
@@ -9,9 +9,9 @@ import Foundation
 import Alamofire
 import WWToolKit
 
-// MARK: - EvmProvider
+// MARK: - EVMProvider
 
-class EvmProvider {
+class EVMProvider {
     // MARK: Properties
 
     private let networkManager: NetworkManager
@@ -72,9 +72,9 @@ class EvmProvider {
     }
 }
 
-// MARK: EvmProvider.ResponseError
+// MARK: EVMProvider.ResponseError
 
-extension EvmProvider {
+extension EVMProvider {
     enum ResponseError: Error {
         case invalidJson
         case noResult

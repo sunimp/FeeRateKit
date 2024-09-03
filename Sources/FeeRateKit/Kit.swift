@@ -14,12 +14,12 @@ public class Kit {
     // MARK: Properties
 
     private let mempoolSpaceProvider: MempoolSpaceProvider
-    private let ethProvider: EvmProvider
-    private let bscProvider: EvmProvider
+    private let ethProvider: EVMProvider
+    private let bscProvider: EVMProvider
 
     // MARK: Lifecycle
 
-    init(mempoolSpaceProvider: MempoolSpaceProvider, ethProvider: EvmProvider, bscProvider: EvmProvider) {
+    init(mempoolSpaceProvider: MempoolSpaceProvider, ethProvider: EVMProvider, bscProvider: EVMProvider) {
         self.mempoolSpaceProvider = mempoolSpaceProvider
         self.ethProvider = ethProvider
         self.bscProvider = bscProvider
@@ -59,12 +59,12 @@ extension Kit {
         let networkManager = NetworkManager(logger: logger)
 
         let mempoolSpaceProvider = MempoolSpaceProvider(networkManager: networkManager, config: providerConfig)
-        let ethProvider = EvmProvider(
+        let ethProvider = EVMProvider(
             networkManager: networkManager,
-            url: providerConfig.ethEvmURL,
-            auth: providerConfig.ethEvmAuth
+            url: providerConfig.ethEVMURL,
+            auth: providerConfig.ethEVMAuth
         )
-        let bscProvider = EvmProvider(networkManager: networkManager, url: providerConfig.bscEvmURL)
+        let bscProvider = EVMProvider(networkManager: networkManager, url: providerConfig.bscEVMURL)
 
         return Kit(mempoolSpaceProvider: mempoolSpaceProvider, ethProvider: ethProvider, bscProvider: bscProvider)
     }

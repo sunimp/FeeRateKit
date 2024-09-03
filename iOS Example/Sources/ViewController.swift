@@ -13,9 +13,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var textView: UITextView?
 
     private let feeRateKit = Kit.instance(providerConfig: FeeProviderConfig(
-            ethEvmURL: FeeProviderConfig.infuraURL(projectID: "2a1306f1d12f4c109a4d4fb9be46b02e"),
-            ethEvmAuth: "fc479a9290b64a84a15fa6544a130218",
-            bscEvmURL: FeeProviderConfig.defaultBscEvmURL,
+            ethEVMURL: FeeProviderConfig.infuraURL(projectID: "2a1306f1d12f4c109a4d4fb9be46b02e"),
+            ethEVMAuth: "fc479a9290b64a84a15fa6544a130218",
+            bscEVMURL: FeeProviderConfig.defaultBSCEVMURL,
             mempoolSpaceURL: "https://mempool.space"
     ))
 

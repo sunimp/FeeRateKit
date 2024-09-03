@@ -9,23 +9,23 @@ import Foundation
 public struct FeeProviderConfig {
     // MARK: Static Computed Properties
 
-    public static var defaultBscEvmURL: String {
+    public static var defaultBSCEVMURL: String {
         "https://bsc-dataseed.binance.org/"
     }
 
     // MARK: Properties
 
-    let ethEvmURL: String
-    let ethEvmAuth: String?
-    let bscEvmURL: String
+    let ethEVMURL: String
+    let ethEVMAuth: String?
+    let bscEVMURL: String
     let mempoolSpaceURL: String
 
     // MARK: Lifecycle
 
-    public init(ethEvmURL: String, ethEvmAuth: String? = nil, bscEvmURL: String, mempoolSpaceURL: String) {
-        self.ethEvmURL = ethEvmURL
-        self.ethEvmAuth = ethEvmAuth
-        self.bscEvmURL = bscEvmURL
+    public init(ethEVMURL: String, ethEVMAuth: String? = nil, bscEVMURL: String, mempoolSpaceURL: String) {
+        self.ethEVMURL = ethEVMURL
+        self.ethEVMAuth = ethEVMAuth
+        self.bscEVMURL = bscEVMURL
         self.mempoolSpaceURL = mempoolSpaceURL
     }
 
