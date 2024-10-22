@@ -1,5 +1,6 @@
 //
 //  EVMProvider.swift
+//  FeeRateKit
 //
 //  Created by Sun on 2019/5/28.
 //
@@ -7,7 +8,7 @@
 import Foundation
 
 import Alamofire
-import WWToolKit
+import SWToolKit
 
 // MARK: - EVMProvider
 

@@ -1,12 +1,13 @@
 //
 //  Kit.swift
+//  FeeRateKit
 //
 //  Created by Sun on 2019/4/5.
 //
 
 import Foundation
 
-import WWToolKit
+import SWToolKit
 
 // MARK: - Kit
 

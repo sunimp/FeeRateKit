@@ -3,10 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 54;
+	objectVersion = 60;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A4898AE12CC77863005222FB /* FeeRateKit in Frameworks */ = {isa = PBXBuildFile; productRef = A4898AE02CC77863005222FB /* FeeRateKit */; };
+		A4898AE42CC77898005222FB /* FeeRateKit in Frameworks */ = {isa = PBXBuildFile; productRef = A4898AE32CC77898005222FB /* FeeRateKit */; };
 		D3500A3028EDAEC80093A369 /* FeeRateKit in Frameworks */ = {isa = PBXBuildFile; productRef = D3500A2F28EDAEC80093A369 /* FeeRateKit */; };
 		D36AAB4A23A7558C0065B32B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D36AAB4623A7558C0065B32B /* LaunchScreen.storyboard */; };
 		D36AAB4B23A7558C0065B32B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36AAB4723A7558C0065B32B /* AppDelegate.swift */; };
@@ -16,7 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		607FACD01AFB9204008FA782 /* FeeRateKit Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FeeRateKit Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		607FACD01AFB9204008FA782 /* FeeRateKit-Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "FeeRateKit-Example.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D36AAB4623A7558C0065B32B /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		D36AAB4723A7558C0065B32B /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -32,6 +34,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A4898AE42CC77898005222FB /* FeeRateKit in Frameworks */,
+				A4898AE12CC77863005222FB /* FeeRateKit in Frameworks */,
 				D3500A3028EDAEC80093A369 /* FeeRateKit in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -60,7 +64,7 @@
 		607FACD11AFB9204008FA782 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				607FACD01AFB9204008FA782 /* FeeRateKit Demo.app */,
+				607FACD01AFB9204008FA782 /* FeeRateKit-Example.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -104,9 +108,11 @@
 			name = "iOS Example";
 			packageProductDependencies = (
 				D3500A2F28EDAEC80093A369 /* FeeRateKit */,
+				A4898AE02CC77863005222FB /* FeeRateKit */,
+				A4898AE32CC77898005222FB /* FeeRateKit */,
 			);
 			productName = FeeRateKit;
-			productReference = 607FACD01AFB9204008FA782 /* FeeRateKit Demo.app */;
+			productReference = 607FACD01AFB9204008FA782 /* FeeRateKit-Example.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -137,6 +143,7 @@
 			);
 			mainGroup = 607FACC71AFB9204008FA782;
 			packageReferences = (
+				A4898AE22CC77898005222FB /* XCLocalSwiftPackageReference "../../FeeRateKit" */,
 			);
 			productRefGroup = 607FACD11AFB9204008FA782 /* Products */;
 			projectDirPath = "";
@@ -294,7 +301,7 @@
 				);
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sunimp.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "FeeRateKit Demo";
+				PRODUCT_NAME = "FeeRateKit-Example";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -318,7 +325,7 @@
 				);
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "com.sunimp.$(PRODUCT_NAME:rfc1034identifier)";
-				PRODUCT_NAME = "FeeRateKit Demo";
+				PRODUCT_NAME = "FeeRateKit-Example";
 				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
 				SUPPORTS_MACCATALYST = NO;
 				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
@@ -351,7 +358,22 @@
 		};
 /* End XCConfigurationList section */
 
+/* Begin XCLocalSwiftPackageReference section */
+		A4898AE22CC77898005222FB /* XCLocalSwiftPackageReference "../../FeeRateKit" */ = {
+			isa = XCLocalSwiftPackageReference;
+			relativePath = ../../FeeRateKit;
+		};
+/* End XCLocalSwiftPackageReference section */
+
 /* Begin XCSwiftPackageProductDependency section */
+		A4898AE02CC77863005222FB /* FeeRateKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FeeRateKit;
+		};
+		A4898AE32CC77898005222FB /* FeeRateKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			productName = FeeRateKit;
+		};
 		D3500A2F28EDAEC80093A369 /* FeeRateKit */ = {
 			isa = XCSwiftPackageProductDependency;
 			productName = FeeRateKit;
